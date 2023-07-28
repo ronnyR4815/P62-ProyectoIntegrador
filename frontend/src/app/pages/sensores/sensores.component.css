@@ -1,0 +1,36 @@
+/* Elimina la clase "col-md-6" de los contenedores de gráficos */
+.chart-container {
+    width: 100%;
+    height: 400px;
+    /* Ajusta la altura según sea necesario */
+    overflow: hidden;
+    /* Para ocultar cualquier contenido que se salga del contenedor */
+}
+
+.container {
+    display: flex;
+    /* Para mantener los elementos en una fila */
+    flex-wrap: wrap;
+    /* Para permitir que los elementos se muevan a la siguiente línea si es necesario */
+    justify-content: center;
+    width: 100%;
+    /* Para centrar los elementos horizontalmente */
+}
+
+/* Asegúrate de que los gráficos ocupen todo el ancho */
+#temperatura>div,
+#humedad>div,
+#humedad-suelo>div,
+#humedad-suelo-pastel>div {
+    width: 100%;
+}
+
+.row.text-center {
+    text-align: center;
+}
+
+/* Agregar estilos para hacer los botones más grandes */
+.btn-lg {
+    padding: 12px 20px;
+    font-size: 18px;
+}

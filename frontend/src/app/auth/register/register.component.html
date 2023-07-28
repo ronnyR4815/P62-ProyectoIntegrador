@@ -1,0 +1,47 @@
+<app-nav></app-nav>
+<form [formGroup]="registerForm">
+    <p class="text-danger">{{registerError}}</p>
+    <div class="mb-3">
+      <label for="username" class="form-label">Nombre de usuario</label>
+      <input formControlName="username" type="text" class="form-control" id="username">
+      <div *ngIf="username.invalid && (username.dirty || username.touched)" class="text-danger">
+        <div *ngIf="username.errors?.['required']">
+          Nombre de usuario es requerido.
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
+      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+        <div *ngIf="email.errors?.['required']">
+          Correo es requerido.
+        </div>
+        <div *ngIf="email.errors?.['email']">
+          Correo debe tener un formato valido.
+        </div>
+      </div>
+      <div id="emailHelp" class="form-text">Nosotros nunca compartiremos tu direccion de correo electronico</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+      <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+        <div *ngIf="password.errors?.['required']">
+          Contraseña es requerida.
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="tipo" class="form-label">Tipo de usuario</label>
+      <select formControlName="tipo" class="form-control" id="tipo">
+        <option *ngFor="let option of tipoOptions" [value]="option">{{option}}</option>
+      </select>
+      <div *ngIf="tipo.invalid && (tipo.dirty || tipo.touched)" class="text-danger">
+        <div *ngIf="tipo.errors?.['required']">
+          Tipo de usuario es requerido.
+        </div>
+      </div>
+    </div>
+    <button type="submit" (click)="register()" class="btn btn-primary">Registrar</button>
+  </form>

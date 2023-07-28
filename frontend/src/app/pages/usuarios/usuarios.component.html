@@ -1,0 +1,21 @@
+<app-nav></app-nav>
+<div class="container mt-4">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Tipo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userData">
+          <td>{{ user?.username }}</td>
+          <td>{{ user?.email }}</td>
+          <td>{{ user?.password }}</td>
+          <td>{{ user?.tipo }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

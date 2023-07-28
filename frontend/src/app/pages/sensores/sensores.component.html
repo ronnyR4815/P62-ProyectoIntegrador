@@ -1,0 +1,97 @@
+<app-nav></app-nav>
+<main>
+    <div class="container">
+        <h1 class="mt-3">Lectura de sensores de la floristeria</h1>
+        <div class="row mb-3">
+            <section id="temperatura" class="py-5">
+                <div>
+                    <h2>Temperatura general del ambiente</h2>
+                    <input type="text" size="6" id="temp" class="form-control" readonly>
+                    <div class="chart-container">
+                        <div id="TempChartContainer" class="chart"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="temperatura" class="py-5">
+                <div>
+                    <h2>Temperatura general del ambiente (Gráfico de barras)</h2>
+                    <div class="chart-container">
+                        <div id="TempBarChartContainer" class="chart"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="temperatura-pastel" class="py-5">
+                <div>
+                    <h2>Temperatura general del ambiente (Gráfico de pastel)</h2>
+                    <div class="chart-container">
+                        <div id="TempPieChartContainer" class="chart"></div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="humedad" class="py-5">
+                <div>
+                    <h2>Humedad general del ambiente</h2>
+                    <input type="text" size="6" id="humd" class="form-control" readonly>
+                    <div class="chart-container">
+                        <div id="HumdChartContainer" class="chart"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="humedad" class="py-5">
+                <div>
+                    <h2>Humedad general del ambiente (Gráfico de barras)</h2>
+                    <div class="chart-container">
+                        <div id="HumdBarChartContainer" class="chart"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="humedad-pastel" class="py-5">
+                <div>
+                    <h2>Humedad general del ambiente (Gráfico de pastel)</h2>
+                    <div class="chart-container">
+                        <div id="HumdPieChartContainer" class="chart"></div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="humedad-suelo" class="py-5">
+                <div>
+                    <h2>Humedad del suelo (Grafico de lineas)</h2>
+                    <input type="text" size="6" id="soilHumd" class="form-control" readonly>
+                    <div class="chart-container">
+                        <div id="SoilHumdChartContainer" class="chart"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="humedad-suelo" class="py-5">
+                <div>
+                    <h2>Humedad del suelo (Gráfico de barras)</h2>
+                    <div class="chart-container">
+                        <div id="SoilHumdBarChartContainer" class="chart"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- Nuevo contenedor para el gráfico de pastel -->
+            <section id="humedad-suelo-pastel" class="py-5">
+                <div>
+                    <h2>Humedad del suelo (Gráfico de pastel)</h2>
+                    <div class="chart-container">
+                        <div id="SoilHumdPieChartContainer" class="chart"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- <button *ngIf="userAdmin" (click)="saveConfiguration()">Guardar cambios</button> -->
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-12 text-center">
+            <button *ngIf="userAdmin" class="btn btn-primary btn-lg" (click)="descargarReporteCSV()">Descargar Reporte
+                CSV</button>
+            <button *ngIf="userAdmin" class="btn btn-primary btn-lg" (click)="descargarReportePDF()">Descargar Reporte
+                PDF</button>
+        </div>
+    </div>
+</main>
